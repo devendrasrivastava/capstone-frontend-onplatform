@@ -3,7 +3,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -16,7 +15,6 @@ import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import ActionAreaCard1 from '../ActionAreaCard/ActionAreaCard';
-import CustomizedSnackbars from '../SnackBar/Snackbar';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
@@ -58,22 +56,7 @@ export default function SignUp() {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-  const [values2, setValues2] = React.useState({        //for confirm password show field
-    confirmpassword: "",
-    showConfirmPassword: false
-  });
-  const handleChange2 = (prop) => (event) => {
-    setValues2({ ...values2, [prop]: event.target.value });
-  };
-  const handleClickShowPassword2 = () => {
-    setValues2({
-      ...values2,
-      showConfirmPassword: !values2.showConfirmPassword
-    });
-  };
-  const handleMouseDownPassword2 = (event) => {
-    event.preventDefault();
-  };
+ 
 
 
   const [open, setOpen] = React.useState(false);   //2 added for snack bars
@@ -164,14 +147,7 @@ export default function SignUp() {
         .required("Password cannot be left blank")
         .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/, "password must be between 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter."),
 
-      confirmpassword: yup.string()
-        .required("Confirm Password cannot be left blank")
-        .test("confirmpassword", "Password and Confirm password should be same", function (cpass) {
-          if (this.parent.password === cpass) {
-            return true;
-          }
-          return false;
-        })
+    
     })
   })
 
@@ -330,37 +306,7 @@ export default function SignUp() {
                       </FormControl>
                       {formik.errors.password && formik.touched.password ? <span className='text-danger'>{formik.errors.password}</span> : null}
                     </Grid>
-                    <Grid item xs={12}>
-                      <FormControl fullWidth sx={{ mt: 1 }} variant="outlined" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.confirmpassword}>
-                        <InputLabel htmlFor="outlined-adornment-password">Confirm Password</InputLabel>
-                        <OutlinedInput
-                          id="confirmpassword"
-                          required
-                          fullWidth
-                          onCopy={handleChange}
-                          onPaste={handleChange}
-                          type={values2.showConfirmPassword ? "text" : "password"}
-                          value={values2.confirmpassword}
-                          onChange={handleChange2("confirmpassword")}   //doubt
-                          endAdornment={
-                            <InputAdornment position="end">
-                              <IconButton
-                                aria-label="toggle password visibility"
-                                onClick={handleClickShowPassword2}
-                                onMouseDown={handleMouseDownPassword2}
-                                edge="end"
-                              // margin="normal"
-                              // fullWidth
-                              >
-                                {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                              </IconButton>
-                            </InputAdornment>
-                          }
-                          label="Confirm Password"
-                        />
-                      </FormControl>
-                      {formik.errors.confirmpassword && formik.touched.confirmpassword ? <span className='text-danger'>{formik.errors.confirmpassword}</span> : null}
-                    </Grid>
+                  
 
                   </Grid>
 
