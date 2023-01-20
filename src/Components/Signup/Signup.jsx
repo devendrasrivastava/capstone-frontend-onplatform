@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import ActionAreaCard1 from '../ActionAreaCard/ActionAreaCard';
-
+import CustomizedSnackbars from '../SnackBar/Snackbar';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
@@ -111,7 +111,7 @@ export default function SignUp() {
         .then(data => {
           console.log(data)
           if(data.userId) {
-            // navigate("/login")
+            navigate("/login")
           }
 
         })

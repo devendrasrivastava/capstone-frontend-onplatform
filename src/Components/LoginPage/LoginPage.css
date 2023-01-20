@@ -1,0 +1,12 @@
+.user-login-form{
+    margin-top: 16vh;
+    margin-bottom: 5vh;
+    }
+#loginSubmitButton {
+    background-color: #42145F;
+    border: #42145F;
+}
+
+.user-SignInSide{
+    margin-top: 16vh;
+}
