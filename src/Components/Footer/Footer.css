@@ -1,173 +1,144 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-*{
-  padding:0%;
-  margin:0%;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-.hero {
-  height: auto;
-  background-color: #42145F;
-  /* background-color: rgba(0, 0, 0, 0.747); */
-  background-size: cover;
-  background-blend-mode: multiply;
-   /* background-attachment:fixed ;
-    activate when you put in your website (optional)
-  */
-  color: rgb(255, 255, 255);
-  padding: 30px 80px 30px 30px;
-}
-.hero .container{
-  justify-content: space-between;
-  flex-wrap: wrap;
-  flex: 1;
-}
-.flex{
-  display: flex;
-}
-.container__about{
-  margin-bottom: 30px;
+*:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.container__about p{
-  margin-top: 10px;
-  max-width: 300px;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 14px;
-}
-
-.container-pages{
-  column-gap: 30px;
-}
-
-.container-pages ul{
-  padding-top: 10px;
-  list-style: none;
-  line-height: 24px;
-}
-.container-pages ul a{
-  color: inherit;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 14px;
-}
-.container-pages ul a:hover{
-  color: #017143;
-}
-footer .by{
-margin-top: 30px;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-footer .by p{
-  color: rgba(255, 255, 255, 0.605);
-  font-size: 14px;
-}
-.line__separete{
-  margin-top: 30px;
+footer {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  bottom: 0px;
   width: 100%;
-  height: 2px;
-  background-color: #fff;
-  z-index: 999;
-}
-.icons {
-  margin-top: 20px;
   display: flex;
-  column-gap: 25px;
-  
-}
-
-.icon1 {
-  width: 40px;
-  height: 40px;
-  display: inline-flex;
   align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px 0px;
+  background: rgb(0, 0, 15);
+  border-top: aliceblue 5px solid;
+}
+
+p {
+  color: aliceblue;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
   justify-content: center;
-  text-decoration: none;
-  font-size: 20px;
-  color: #fff;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: aliceblue;
+  color: rgb(0, 0, 15);
   border-radius: 50%;
-  outline: 2px solid #fff;
-  transition-property:
-      outline-offset, outline-color,
-      background-color;
-  transition-duration: .25s;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.icon1:hover {
-  outline-offset: 4px;
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: aliceblue;
+  color: aliceblue;
+  font-family: "Poppins", sans-serif;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.icon1:hover i {
-  animation: shake .25s;
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: aliceblue;
+  top: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.icon--instagram:hover {
-  background-image: radial-gradient(circle at 30% 107%,
-          #fdf497 0%, #fdf497 5%,
-          #fd5949 45%, #d6249f 60%,
-          #285AEB 90%);
-  outline-color: #a02d76;
+.wrapper .icon:hover .tooltip {
+  top: 60px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
-.icon--twitter:hover {
-  background-color: #1da1f2;
-  outline-color: #1da1f2;
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
-.icon--linkedin:hover {
-  background-color: #0077b5;
-  outline-color: #0077b5;
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+  background: #0077b5;
+  color: aliceblue;
 }
 
-.icon--github:hover {
-  background-color: #000000;
-  outline-color: #000000;
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #4267b2;
+  color: aliceblue;
 }
 
-@keyframes shake {
-  10% {
-      transform: rotate(15deg);
-  }
-
-  20% {
-      transform: rotate(-15deg);
-  }
-
-  30% {
-      transform: rotate(15deg);
-  }
-
-  40% {
-      transform: rotate(-15deg);
-  }
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1da1f2;
+  color: aliceblue;
 }
 
-@media only screen and (max-width: 800px) {
-  .hero{
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-  }
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  color: aliceblue;
+}
 
-  .container__about h2{
-    font-size: 20px;
-  }
-  .container__about p{
-    font-size: 12px;
-  }
-  .container__recentpages h2{
-    font-size: 20px;
-  }
-  .container-pages ul a{
-    font-size: 12px;
-  }
-  footer .by p{
-    font-size: 12px;
-  }
-} 
-
-.footermargin{
-  margin-top: 5vh;
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background: #333;
+  color: aliceblue;
 }

@@ -28,7 +28,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgetpassword" element={<Register />} />
         </Routes>
-          {/* <BSFooter/> */}
+          
           <Footer/>
           
       </BrowserRouter>

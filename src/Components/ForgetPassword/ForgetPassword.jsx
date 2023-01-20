@@ -1,6 +1,7 @@
 import React from 'react';
 import './ForgetPassword.css'
 import { useState } from 'react';
+import { MDBInput } from 'mdb-react-ui-kit';
 
 
 export default function Register() {
@@ -95,16 +96,18 @@ export default function Register() {
                   <div className="mb-2">
                      <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
                      <div class="input-group">
-                        <div class="input-group-text"><i class="fa-solid fa-envelope-circle-check"></i></div>
-                        <input type="email" id="email" className="form-control" onChange={(e) => setEmail(e.target.value)} placeholder="email" />
+                        
+                        <MDBInput label='User Email' type="email" id="email" className="form-control" onChange={(e) => setEmail(e.target.value)} placeholder="email" />
+                        <br />
                      </div>
                   </div>
 
                   <div className="mb-2">
                      <label class="visually-hidden" for="autoSizingInputGroup">Password</label>
                      <div class="input-group">
-                        <div class="input-group-text"><i class="fa-solid fa-key"></i></div>
-                        <input type="password" id="pass" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                        
+                        <MDBInput label='Password' type="password" id="pass" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                     <br />
                      </div>
                   </div>
 
@@ -113,8 +116,9 @@ export default function Register() {
 
                      <label class="visually-hidden" for="autoSizingInputGroup">ConfirmPassword</label>
                      <div class="input-group">
-                        <div class="input-group-text"><i class="fa-solid fa-key"></i></div>
-                        <input type="password" id="confirm" className="form-control" onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm Password" />
+                        
+                        <MDBInput label='Confirm Password' id="confirm" className="form-control" onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm Password" />
+                     <br />
                      </div>
                   </div>
 
