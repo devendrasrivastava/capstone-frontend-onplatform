@@ -1,0 +1,16 @@
+#signUpForm{
+    /* margin-top: 16vh; */
+}
+#submitbutton{
+    background-color: #42145F !important;
+    border-color: #42145F !important;
+}
+#resetbutton{
+    background-color: #42145F !important;
+    border-color: #42145F !important;
+    margin-bottom: 5vh;
+}
+
+.user-signup{
+    margin-top: 16vh !important;
+}
