@@ -36,7 +36,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {         //added for 
 
 
 
-export default function SignInSide() {
+export default function LoginPage() {
 
   const [values, setValues] = React.useState({           //added for show password 
     password: "",
@@ -83,28 +83,28 @@ export default function SignInSide() {
         },
         body: JSON.stringify(values)
       })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        console.log(data.jwt_token);
-        console.log(data.email);
-        console.log(data.status)
-                  
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          console.log(data.jwt_token);
+          console.log(data.email);
+          console.log(data.status)
 
-        if (data.status === 200) {
-        localStorage.setItem("jwt_token", data.jwt_token)  //use session storage to remove token on closure of browser
-        localStorage.setItem("userName", data.email) //to get data of user in the state, we can now print user details when they log in
-        
-        navigate("/")
 
-        }
-      })
-      .catch((error)=>{
-        setOpen(true);
-    });
-  },
+          if (data.status === 200) {
+            localStorage.setItem("jwt_token", data.jwt_token)  //use session storage to remove token on closure of browser
+            localStorage.setItem("userName", data.email) //to get data of user in the state, we can now print user details when they log in
 
-  
+            navigate("/")
+
+          }
+        })
+        .catch((error) => {
+          setOpen(true);
+        });
+    },
+
+
     validationSchema: yup.object().shape({
       email: yup.string()
         .email("Invalid email address")
@@ -170,44 +170,44 @@ export default function SignInSide() {
                   autoFocus
                 />
                 {formik.errors.email && formik.touched.email ? <span className='text-danger'>{formik.errors.email}</span> : null}
-               
 
-<FormControl fullWidth sx={{ mt: 1}} onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.password}>
-                <InputLabel htmlFor="outlined-adornment-password" variant="outlined" >Password</InputLabel>
-                <OutlinedInput
-                  id="password"
-                  required
-                  fullWidth
 
-                  onCopy={handleChange}
-                  onPaste={handleChange}
-                  type={values.showPassword ? "text" : "password"}
-                  value={values.password}
-                  onChange={handleChange1("password")}
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                        edge="end"
+                <FormControl fullWidth sx={{ mt: 1 }} onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.password}>
+                  <InputLabel htmlFor="outlined-adornment-password" variant="outlined" >Password</InputLabel>
+                  <OutlinedInput
+                    id="password"
+                    required
+                    fullWidth
 
-                      >
-                        {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  }
-                  label="Password"
-                />
+                    onCopy={handleChange}
+                    onPaste={handleChange}
+                    type={values.showPassword ? "text" : "password"}
+                    value={values.password}
+                    onChange={handleChange1("password")}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+
+                        >
+                          {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                    label="Password"
+                  />
                 </FormControl>
                 {formik.errors.password && formik.touched.password ? <span className='text-danger'>{formik.errors.password}</span> : null}
 
 
                 <Grid container>
                   <Grid item xs>
-                    {/* <Link href="/forgetpassword" variant="body2">
+                    <Link href="/forgetpassword" variant="body2">
                       Forgot password?
-                    </Link>  */}
+                    </Link>
                     <Stack spacing={2} sx={{ width: '100%' }}>
                       <Button
                         sx={{ mt: 3, mb: 2, backgroundColor: "#40135C" }}
