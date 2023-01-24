@@ -25,6 +25,7 @@ import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { WidthNormal } from '@mui/icons-material';
+import {useEffect} from 'react';
 
 
 
@@ -71,12 +72,12 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
-      email: "",
+      username: "",
       password: "",
     },
     onSubmit: values => {
       console.log("submit");
-      fetch("http://localhost:8765/api/v1/users/login", {
+      fetch("http://localhost:9090/api/v1/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -86,27 +87,30 @@ export default function LoginPage() {
         .then(res => res.json())
         .then(data => {
           console.log(data);
-          console.log(data.jwt_token);
-          console.log(data.email);
-          console.log(data.status)
+          console.log(data.token);
+          console.log(data.user.name);
+          console.log(data.user.email);
+         
 
 
-          if (data.status === 200) {
-            localStorage.setItem("jwt_token", data.jwt_token)  //use session storage to remove token on closure of browser
-            localStorage.setItem("userName", data.email) //to get data of user in the state, we can now print user details when they log in
+          
+            localStorage.setItem("jwt_token", data.token)  //use session storage to remove token on closure of browser
+            localStorage.setItem("userName", data.user.email) //to get data of user in the state, we can now print user details when they log in
 
             navigate("/")
 
-          }
+          
         })
         .catch((error) => {
           setOpen(true);
         });
     },
 
+   
+
 
     validationSchema: yup.object().shape({
-      email: yup.string()
+      username: yup.string()
         .email("Invalid email address")
         .required("Email cannot be left blank"),
       password: yup.string()
@@ -118,6 +122,9 @@ export default function LoginPage() {
   const handleChange = (e) => {
     e.preventDefault();
   };
+
+
+
 
 
   return (
@@ -159,17 +166,17 @@ export default function LoginPage() {
               <Box component="form" onSubmit={formik.handleSubmit} noValidate sx={{ mt: 1 }}>
                 <TextField
                   onChange={formik.handleChange} onBlur={formik.blur}
-                  value={formik.values.email}
+                  value={formik.values.username}
                   margin="normal"
                   required
                   fullWidth
-                  id="email"
+                  id="username"
                   label="Email Address"
-                  name="email"
+                  name="username"
                   autoComplete="email"
                   autoFocus
                 />
-                {formik.errors.email && formik.touched.email ? <span className='text-danger'>{formik.errors.email}</span> : null}
+                {formik.errors.username && formik.touched.username ? <span className='text-danger'>{formik.errors.username}</span> : null}
 
 
                 <FormControl fullWidth sx={{ mt: 1 }} onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.password}>

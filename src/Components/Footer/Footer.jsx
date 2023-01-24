@@ -25,7 +25,7 @@ export default function Footer() {
 
 <footer>
   <div class="social">
-    <p>Follow me on social media</p>
+    
     <ul class="wrapper">
       <a href="#" target="_blank">
         <li class="icon linkedin">

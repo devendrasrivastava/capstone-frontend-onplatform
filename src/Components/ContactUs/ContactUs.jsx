@@ -37,9 +37,7 @@ export default function ContactUs() {
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            // if(data.status===401){
-            //     navigate("/login")
-            // }
+            
 
             if (!data.isAuthenticated) {
                 navigate("/login")
@@ -87,7 +85,7 @@ export default function ContactUs() {
           </Container>
         </Box>
         <Container sx={{ py: 8 }} maxWidth="lg">
-          {/* End hero unit */}
+          
           <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={12} md={12}>
@@ -97,8 +95,7 @@ export default function ContactUs() {
                   <CardMedia
                     component="img"
                     sx={{
-                      // 16:9
-                    //   pt: '0.25%',
+                      
                     height: '60vh'
                     }}
                     image="./assets/contact1.jpg"
@@ -119,10 +116,7 @@ Call Telephone Banking Call us on: 03457 888 444. Overseas: 0345 030 3605.
 You can also write to us at 250 Bishopsgate, London, EC2M 4AA.
                     </Typography>
                   </CardContent>
-                  {/* <CardActions>
-                    <Button size="small">View</Button>
-                    <Button size="small">Edit</Button>
-                  </CardActions> */}
+                  
                 </Card>
               </Grid>
             ))}
@@ -137,3 +131,4 @@ You can also write to us at 250 Bishopsgate, London, EC2M 4AA.
     </ThemeProvider>
   );
 }
+

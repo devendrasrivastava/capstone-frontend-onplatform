@@ -72,18 +72,16 @@ export default function SignUp() {
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
-      firstname: "",
-      lastname: "",
+      name: "",
       email: "",
-      city: "",
-      phone: "",
-      age: "",
-      password: "",
-      confirmpassword: ""
+      accountno: "",
+      address: "",
+      mobile: "",
+      password: ""
     },
     onSubmit: values => {
       // console.log(values);
-      fetch("http://localhost:8765/api/v1/users/register", {
+      fetch("http://localhost:9090/api/v1/auth/register", {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
@@ -93,54 +91,51 @@ export default function SignUp() {
         .then(res => res.json())
         .then(data => {
           console.log(data)
-          if(data.userId) {
+          if(data.id) {
             navigate("/login")
           }
+          else if(data.status === 500){
+            setOpen(true);
+          }
+
+          
 
         })
+        // .catch((e) => {
+        //   console.log("Catch block executed")
+        //   setOpen(true)
+        // })
 
-        .catch((e) => {
-          console.log("Catch block executed")
-          setOpen(true)
-        })
+        
+
+        
     },
 
     
     validationSchema: yup.object().shape({
-      firstname: yup.string()
-        .min(3, "First name is too short")
-        .max(20, "First name is too long")
-        .matches(/^[a-zA-Z.]{2,}$/, "Please enter valid First Name")
+      name: yup.string()
+        .min(3, "Name is too short")
+        .max(40, "Name is too long")
+        .matches(/^[a-z A-Z.]{2,}$/, "Please enter valid First Name")
         .required("Firstname cannot be left blank"),
 
-      lastname: yup.string()
-        .min(3, "Last name is too short")
-        .max(20, "Last name is too long")
-        .matches(/^[a-zA-Z.]{2,}$/, "Please enter valid Last Name")
-        .required("lastname cannot be left blank"),
 
       email: yup.string()
         .email("Invalid email address")
         .required("Email cannot be left blank"),
 
-      city: yup.string()
-        .required("City cannot be left blank")
-        .matches(/^[a-z A-Z.]{2,}$/, "Please enter valid City"),
+      address: yup.string()
+        .min(5, "Address is too short")
+        .required("Address cannot be left blank")
+        .matches(/^[a-z A-Z.,]{2,}$/, "Please enter valid address"),
 
-      phone: yup.string()
-        .required("Phone cannot be left blank")
-        .matches(/^[0][6-9][0-9]{9}$/, "Please add 0 before your 10 digit mobile number."),
+      accountno: yup.string()
+      .required("account cannot be left blank")
+      .matches(/^[0-9]{8}$/, "Please enter valid 8 digit account number"),
 
-        age: yup.date()
-        // .required("Age cannot be left blank")
-        // .matches(/^[0-9]{1,2}$/, "Please enter valid Age"),
-        .max(new Date(Date.now() - 567648000000), "You must be at least 18 years") //567648000000 = number of seconds in 18 years
-        .min(new Date(Date.now() - 1892160000000), "You must be under 60 years")
-        .required("Date of Birth Required"),
-
-      // age: yup.string()
-      // .required("DoB cannot be left blank")
-      // .matches(/^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/, "Please enter valid Age"),
+      mobile: yup.string()
+        .required("Mobile cannot be left blank")
+        .matches(/^[6-9][0-9]{9}$/, "Please enter valid 10 digit mobile number."),
 
 
       password: yup.string()
@@ -187,76 +182,65 @@ export default function SignUp() {
                   <Grid container spacing={2}>
                     <Grid item xs={12}>
                       <TextField
-                        onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.firstname}
+                        onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.name}
 
-                        name="firstname"
+                        name="name"
                         required
                         fullWidth
-                        id="firstname"
-                        label="First Name"
+                        id="name"
+                        label="Name"
                         type="text"
                         autoFocus
 
                       />
-                      {formik.errors.firstname && formik.touched.firstname ? <span className='text-danger'>{formik.errors.firstname}</span> : null}
+                      {formik.errors.name && formik.touched.name ? <span className='text-danger'>{formik.errors.name}</span> : null}
 
                     </Grid>
-                    <Grid item xs={12}>
-                      <TextField
-                        onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.lastname}
-                        required
-                        fullWidth
-                        id="lastname"
-                        label="Last Name"
-                        name="lastname"
-                        type="text"
-                      />
-                      {formik.errors.lastname && formik.touched.lastname ? <span className='text-danger'>{formik.errors.lastname}</span> : null}
-                    </Grid>
+                    
 
                     <Grid item xs={12}>
                       <TextField
-                        onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.city}
+                        onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.address}
                         required
                         fullWidth
-                        id="city"
-                        label="City"
-                        name="city"
+                        id="address"
+                        label="Address"
+                        name="address"
                         type="text"
 
 
                       />
-                      {formik.errors.city && formik.touched.city ? <span className='text-danger'>{formik.errors.city}</span> : null}
+                      {formik.errors.address && formik.touched.address ? <span className='text-danger'>{formik.errors.address}</span> : null}
                     </Grid>
-
-                    <Grid item xs={12} sm={12}>
-                        <OutlinedInput
-                          onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.age}
-                          required
-                          fullWidth
-                          id="age"
-                          label=""
-                          type="date"
-                          name="age"
-                          endAdornment={
-                            <InputAdornment position="end">DOB</InputAdornment>
-                          }
-                        />
-                        {formik.errors.age && formik.touched.age ? <span className='text-danger'>{formik.errors.age}</span> : null}
-                      </Grid>
 
                     <Grid item xs={12}>
                       <TextField
-                        onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.phone}
+                        onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.accountno}
                         required
                         fullWidth
-                        id="phone"
-                        label="Phone"
-                        name="phone"
+                        id="accountno"
+                        label="Account Number"
+                        name="accountno"
+                        type="text"
+
+
+                      />
+                      {formik.errors.accountno && formik.touched.accountno ? <span className='text-danger'>{formik.errors.accountno}</span> : null}
+                    </Grid>
+                    
+
+                    <Grid item xs={12}>
+                      <TextField
+                        onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.mobile}
+                        required
+                        fullWidth
+                        id="mobile"
+                        label="Mobile"
+                        name="mobile"
                         type="text"
 
                       />
-                      {formik.errors.phone && formik.touched.phone ? <span className='text-danger'>{formik.errors.phone}</span> : null}
+                      {formik.errors.mobile && formik.touched.mobile ? <span className='text-danger'>{formik.errors.mobile}</span> : null}
                     </Grid>
 
 

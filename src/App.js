@@ -23,6 +23,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/aboutus" element={<ActionAreaCard />} />
           <Route path="/contactus" element={<ContactUs />} />
+
           <Route path="/services" element={<Services />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUp />} />

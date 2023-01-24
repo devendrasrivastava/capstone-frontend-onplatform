@@ -103,7 +103,7 @@ export default function Register() {
                   </div>
 
                   <div className="mb-2">
-                     <label class="visually-hidden" for="autoSizingInputGroup">Password</label>
+                     <label class="visually-hidden" for="autoSizingInputGroup"></label>
                      <div class="input-group">
                         
                         <MDBInput label='Password' type="password" id="pass" className="form-control" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
@@ -114,7 +114,7 @@ export default function Register() {
 
                   <div className="mb-4">
 
-                     <label class="visually-hidden" for="autoSizingInputGroup">ConfirmPassword</label>
+                     <label class="visually-hidden" for="autoSizingInputGroup"></label>
                      <div class="input-group">
                         
                         <MDBInput label='Confirm Password' id="confirm" className="form-control" onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm Password" />
