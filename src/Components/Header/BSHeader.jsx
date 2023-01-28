@@ -2,8 +2,22 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './BSHeader.css'
 import { useNavigate } from "react-router-dom";
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function BSHeader() {
+
+
+  const [open, setOpen] = React.useState(false);   //added for backdrop
+
+  const handleOpen = () => {
+    setOpen(true);
+    setTimeout(() => {
+      setOpen(false);
+    }, 1000);
+  };
+
+
 
   const useremail = localStorage.getItem('userName');
   const navigate = useNavigate();
@@ -54,6 +68,37 @@ export default function BSHeader() {
                     <li class="nav-item">
                       <Link class="nav-link active" to="/contactlist">Contact List</Link>
                     </li>
+
+                    <li className="nav-item">
+                      <Link className="nav-link active" to="/business" onClick={handleOpen}>business</Link><Backdrop
+                        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                        open={open}
+
+                      >
+                        <CircularProgress color="inherit" />
+                      </Backdrop>
+                    </li>
+
+                    <li className="nav-item">
+                      <Link className="nav-link active" to="/sports" onClick={handleOpen}>Sports</Link><Backdrop
+                        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                        open={open}
+
+                      >
+                        <CircularProgress color="inherit" />
+                      </Backdrop>
+                    </li>
+
+                    <li className="nav-item">
+                      <Link className="nav-link active" to="/entertainment" onClick={handleOpen}>Entertainment</Link><Backdrop
+                        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                        open={open}
+
+                      >
+                        <CircularProgress color="inherit" />
+                      </Backdrop>
+                    </li>
+
 
                   </>
 

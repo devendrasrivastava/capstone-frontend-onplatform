@@ -74,7 +74,7 @@ export default function AddContact() {
         <div className="row">
             <div className="col-md-4 offset-md-4">
                 <div className="bg-dark text-light py-3 mt-3 text-center rounded">
-                    <h2>Add Customer</h2>
+                    <h2>Add Payee</h2>
                 </div>
                 <form onSubmit={formik.handleSubmit}>
                     <div className="mt-2">

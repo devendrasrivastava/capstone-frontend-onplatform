@@ -11,6 +11,9 @@ import LoginPage from './Components/LoginPage/LoginPage';
 import Dashboard from './Components/Dashboard/Dashboard';
 import ContactList from './Components/ContactList/ContactList';
 import Gpay from './Components/Gpay/Gpay';
+import Business from './Components/Filter/Business';
+import Entertainment from './Components/Filter/Entertainment';
+import Sports from './Components/Filter/Sports';
 
 
 function App() {
@@ -30,7 +33,9 @@ function App() {
           <Route path="/forgetpassword" element={<Register />} />
           <Route path="/contactlist" element={<ContactList />} />
           <Route path="/gpay" element={<Gpay/>}/>
-          
+          <Route path="/business" element={<Business />} />
+          <Route path="/entertainment" element={<Entertainment />} />
+          <Route path="/sports" element={<Sports />} />
         </Routes>
           
           <Footer/>
