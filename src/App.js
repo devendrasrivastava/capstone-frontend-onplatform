@@ -10,6 +10,7 @@ import Footer from './Components/Footer/Footer';
 import LoginPage from './Components/LoginPage/LoginPage';
 import Dashboard from './Components/Dashboard/Dashboard';
 import ContactList from './Components/ContactList/ContactList';
+import Gpay from './Components/Gpay/Gpay';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgetpassword" element={<Register />} />
           <Route path="/contactlist" element={<ContactList />} />
+          <Route path="/gpay" element={<Gpay/>}/>
           
         </Routes>
           

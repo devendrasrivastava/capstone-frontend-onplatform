@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AddContact from '../AddContact/AddContact';
 import ContactList from '../ContactList/ContactList';
+import Gpay from '../Gpay/Gpay';
 
 export default function Dashboard() {
 
@@ -40,7 +41,7 @@ export default function Dashboard() {
                 {/* <a href='#' className="btn btn-primary">Transfer Money</a> */}
               
               <AddContact/>
-              
+              <Gpay/>
             </div>
           // </div>)
         }
