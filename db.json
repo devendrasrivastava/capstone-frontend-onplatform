@@ -1,34 +1,20 @@
 {
-  "Register": [
+  "contacts": [
     {
-      "email": "clarke@ca.com",
-      "password": "1234567",
-      "id": 1
-    },
-    {
-      "email": "ponting@ca.com",
-      "password": "sdfdsf1",
-      "id": 2
-    },
-    {
-      "email": "raman@gmail.com",
-      "password": "Dd@1234",
+      "firstname": "deepankar",
+      "lastname": "tiwari",
+      "email": "deepanker@gmail.com",
+      "city": "delhi",
+      "phone": 79799797999,
       "id": 3
     },
     {
-      "email": "peter@gmail.com",
-      "password": "Dd@1234",
-      "id": 4
-    },
-    {
-      "email": "ramannew@gmail.com",
-      "password": "Dd@1234",
+      "firstname": "ankur",
+      "lastname": "pathak",
+      "email": "ankur@gmail.com",
+      "city": "delhi",
+      "phone": 123444,
       "id": 5
-    },
-    {
-      "email": "dev@gmail.com",
-      "password": "Dd@1234",
-      "id": 6
     }
   ]
 }

@@ -15,9 +15,9 @@ export default function Footer() {
 
 
 
-  if (localStorage.getItem('jwt_token')) {
-    setTimeout(logout, 122000);
-  }
+  // if (localStorage.getItem('jwt_token')) {
+  //   setTimeout(logout, 122000);
+  // }
 
 
   return (

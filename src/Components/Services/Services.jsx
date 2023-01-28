@@ -13,7 +13,7 @@ export default function ActionAreaCard() {
   const navigate = useNavigate();  //variable to protect the page
 
   useEffect(() => {                                         //coding start to protect the page
-    fetch("http://localhost:9000/auth/isAuthenticated", {
+    fetch("http://localhost:9090/api/v1/auth/login", {
         method: "POST",
         headers: {
             "Authorization": `Bearer ${localStorage.getItem("jwt_token")}`
