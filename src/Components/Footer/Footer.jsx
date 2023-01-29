@@ -11,7 +11,7 @@ import {
 export default function Footer() {
   return (
     <div className='mt-4'>
-    <MDBFooter className='text-center text-white' style={{ backgroundColor: '#f1f1f1' }}>
+    <MDBFooter className='text-center text-white' style={{ backgroundColor: '#42145F' }}>
       <MDBContainer className='pt-4'>
         <section className='mb-4'>
           <MDBBtn
@@ -19,7 +19,7 @@ export default function Footer() {
             color='link'
             floating
             size="lg"
-            className='text-dark m-1'
+            className='text-light m-1'
             href='#!'
             role='button'
           >
@@ -31,7 +31,7 @@ export default function Footer() {
             color='link'
             floating
             size="lg"
-            className='text-dark m-1'
+            className='text-light m-1'
             href='#!'
             role='button'
           >
@@ -43,7 +43,7 @@ export default function Footer() {
             color='link'
             floating
             size="lg"
-            className='text-dark m-1'
+            className='text-light m-1'
             href='#!'
             role='button'
           >
@@ -55,7 +55,7 @@ export default function Footer() {
             color='link'
             floating
             size="lg"
-            className='text-dark m-1'
+            className='text-light m-1'
             href='#!'
             role='button'
           >
@@ -67,7 +67,7 @@ export default function Footer() {
             color='link'
             floating
             size="lg"
-            className='text-dark m-1'
+            className='text-light m-1'
             href='#!'
             role='button'
           >
@@ -79,7 +79,7 @@ export default function Footer() {
             color='link'
             floating
             size="lg"
-            className='text-dark m-1'
+            className='text-light m-1'
             href='#!'
             role='button'
           >
@@ -88,9 +88,9 @@ export default function Footer() {
         </section>
       </MDBContainer>
 
-      <div className='text-center text-dark p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+      <div className='text-center text-light p-3' style={{ backgroundColor: '#42145F' }}>
         © 2023 Copyright:
-        <a className='text-dark' href='https://mdbootstrap.com/'>
+        <a className='text-light' href='https://mdbootstrap.com/'>
           Devendra & Deepanker
         </a>
       </div>

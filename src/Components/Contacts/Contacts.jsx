@@ -10,15 +10,16 @@ export default function Contacts(props) {
     <div className="col-md-4 ho">
       <div className="card m-4" style={{ width: "18rem" }}>
         <div className="card-body">
-          <i className="bi bi-trash-fill text-danger float-end" onClick={GetId.bind(this, props.id)}></i>
-          <h5 className="card-title">{props.fname} {props.lname}</h5>
-          <h5 className="card-text">{props.email}</h5>
-          <h5 className="card-text">{props.location}</h5>
-          <h5 className="card-text">{props.mobile}</h5>
-          <Link to='/currencyconverter' className="btn user-button">Transfer Money</Link>
-
+          <h6 className="card-text">Name: {props.fname}</h6>
+          <h6 className="card-text">Account Number: {props.accountnumber}</h6>
+          <h6 className="card-text">Email: {props.email}</h6>
+          <h6 className="card-text">IFSC: {props.ifsc}</h6>
+          <h6 className="card-text">Mobile: {props.mobile}</h6>
+          <Link to='/currencyconverter' className="btn bg-dark ho text-white mx-3">Pay</Link>
+          <button  className="btn bg-dark ho text-white" onClick={GetId.bind(this, props.id)}>Delete</button>
         </div>
       </div>
     </div>
+
   )
 }

@@ -79,8 +79,8 @@ export default function ContactUs() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained" style={{backgroundColor:'#5E10B1'}}>Call Us</Button>
-              <Button variant="outlined"style={{backgroundColor:'#5E10B1', color:'white', border:'purple'}}>Mail Us</Button>
+              {/* <Button variant="contained" style={{backgroundColor:'#5E10B1'}}>Call Us</Button>
+              <Button variant="outlined"style={{backgroundColor:'#5E10B1', color:'white', border:'purple'}}>Mail Us</Button> */}
             </Stack>
           </Container>
         </Box>

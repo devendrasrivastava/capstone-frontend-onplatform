@@ -31,37 +31,15 @@ export default function ContactList() {
         })
      }
     
-
-
-    //  useEffect(() => {
-    //     fetch("http://localhost:9000/auth/isAuthenticated",{
-    //        method:"POST",
-    //        headers:{
-    //            "Authorization":`Bearer ${localStorage.getItem("jwt_token")}`
-    //        }
-    //     })
-    //     .then(res=>res.json())
-    //     .then(data=>{
-    //        console.log(data);
-          
-    //        if(!data.isAuthenticated){
-    //            navigate("/login")
-    //        }
-    //     })
-    //    }, [])
-
-
-
        
   return (
-    <>
-    
+    <>    
     
    <div className="container">
     <div className="row">
       
         {
-            contacts.map(item=><Contacts key={item.id} DeleteHandeller={DeleteContact} id={item.id} fname={item.firstname} lname={item.lastname} email={item.email} location={item.city} mobile={item.phone}/>)
+            contacts.map(item=><Contacts key={item.id} DeleteHandeller={DeleteContact} id={item.id} fname={item.firstname} accountnumber={item.accountnumber} email={item.email} ifsc={item.ifsc} mobile={item.phone}/>)
         }
        
     </div>

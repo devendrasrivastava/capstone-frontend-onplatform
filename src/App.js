@@ -15,6 +15,7 @@ import Business from './Components/Filter/Business';
 import Entertainment from './Components/Filter/Entertainment';
 import Sports from './Components/Filter/Sports';
 import CurrencyConverter from './Components/CurrencyConverter/CurrencyConverter';
+import Chatbot from './Components/Chatbot/Chatbot';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/entertainment" element={<Entertainment />} />
           <Route path="/sports" element={<Sports />} />
           <Route path="/currencyconverter" element={<CurrencyConverter/>}/>
+          <Route path="/chatbot" element={<Chatbot/>}/>
         </Routes>
           
           <Footer/>

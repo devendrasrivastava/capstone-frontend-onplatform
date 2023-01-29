@@ -4,6 +4,8 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export default function SimpleAccordion() {
   return (
@@ -54,7 +56,7 @@ export default function SimpleAccordion() {
           <Typography style={{color: "#42145F"}}><h5> Chat with us</h5></Typography>
         </AccordionSummary>
         <Typography style={{color: "#42145F"}}>
-          <h4> Our Chat Sevice will contact you shortly.</h4>
+        <Link to='/chatbot' className="btn user-button">Chat with us</Link>
           </Typography>
       </Accordion>
     </div>
