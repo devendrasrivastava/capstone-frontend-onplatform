@@ -99,6 +99,12 @@ export default function BSHeader() {
                       </Backdrop>
                     </li>
 
+                    {/* <li class="nav-item">
+                      <Link class="nav-link user-navcolor hov ho" to="/currencyconverter">Currency Convert</Link>
+                    </li> */}
+
+
+
 
                   </>
 

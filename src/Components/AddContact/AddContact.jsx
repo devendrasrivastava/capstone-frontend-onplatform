@@ -77,28 +77,28 @@ export default function AddContact() {
                     <h2>Add Payee</h2>
                 </div>
                 <form onSubmit={formik.handleSubmit}>
-                    <div className="mt-2">
+                    <div className="mt-3">
                     <input id="firstname" name='firstname' type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.firstname} className="form-control form-control-sm" placeholder="First Name"/>
                     {formik.errors.firstname && formik.touched.firstname ? <span className='text-danger'>{formik.errors.firstname}</span>:null}
                     </div>
-                    <div className="mt-2">
+                    <div className="mt-3">
                     <input id="lastname" name='lastname' type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.lastname} className="form-control form-control-sm" placeholder="Last Name"/>
                     {formik.errors.lastname  && formik.touched.lastname? <span className='text-danger'>{formik.errors.lastname}</span>:null}
                     </div>
-                    <div className="mt-2">
+                    <div className="mt-3">
                     <input id="email" name='email' type="email" onChange={formik.handleChange} onBlur={formik.handleBlur}className="form-control  form-control-sm" value={formik.values.email} placeholder="Email"/>
                     {formik.errors.email && formik.touched.email? <span className='text-danger'>{formik.errors.email}</span>:null}
                     </div>
-                    <div className="mt-2">
+                    <div className="mt-3">
                     <input id="city" name='city' type="text" onChange={formik.handleChange}onBlur={formik.handleBlur} className="form-control form-control-sm" value={formik.values.city}placeholder="city"/>
                     {formik.errors.city && formik.touched.city? <span className='text-danger'>{formik.errors.city}</span>:null}
                     </div>
-                    <div className="mt-2">
+                    <div className="mt-3">
                     <input id="phone" name='phone' type="number" onChange={formik.handleChange}onBlur={formik.handleBlur} className="form-control form-control-sm" value={formik.values.phone} placeholder="Phone"/>
                     {formik.errors.phone && formik.touched.phone? <span className='text-danger'>{formik.errors.phone}</span>:null}
                     </div>
-                    <div className="mt-2 ">
-                    <button type="submit" className='btn btn-success'> Add Customer</button>
+                    <div className="mt-4">
+                    <button type="submit" className='btn user-button'> Add Customer</button>
                     </div>
                 </form>
             </div>

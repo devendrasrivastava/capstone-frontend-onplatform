@@ -14,6 +14,7 @@ import Gpay from './Components/Gpay/Gpay';
 import Business from './Components/Filter/Business';
 import Entertainment from './Components/Filter/Entertainment';
 import Sports from './Components/Filter/Sports';
+import CurrencyConverter from './Components/CurrencyConverter/CurrencyConverter';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/business" element={<Business />} />
           <Route path="/entertainment" element={<Entertainment />} />
           <Route path="/sports" element={<Sports />} />
+          <Route path="/currencyconverter" element={<CurrencyConverter/>}/>
         </Routes>
           
           <Footer/>

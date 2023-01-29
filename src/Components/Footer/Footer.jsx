@@ -1,78 +1,100 @@
 import React from 'react';
-import './Footer.css';
-import { useNavigate } from "react-router-dom";
-import Timer1 from '../../Timer';
+import {
+  MDBFooter,
+  MDBContainer,
+  MDBCol,
+  MDBRow,
+  MDBIcon,
+  MDBBtn
+} from 'mdb-react-ui-kit';
 
 export default function Footer() {
-
-  const navigate = useNavigate();
-
-  function logout() {
-    navigate("/login")
-    localStorage.removeItem('jwt_token');
-
-  }
-
-
-
-  // if (localStorage.getItem('jwt_token')) {
-  //   setTimeout(logout, 122000);
-  // }
-
-
   return (
-    <div className='footermargin'>
+    <div className='mt-4'>
+    <MDBFooter className='text-center text-white' style={{ backgroundColor: '#f1f1f1' }}>
+      <MDBContainer className='pt-4'>
+        <section className='mb-4'>
+          <MDBBtn
+            rippleColor="dark"
+            color='link'
+            floating
+            size="lg"
+            className='text-dark m-1'
+            href='#!'
+            role='button'
+          >
+            <MDBIcon fab className='fab fa-facebook-f' />
+          </MDBBtn>
 
-<footer>
-  <div class="social">
-    
-    <ul class="wrapper">
-      <a href="#" target="_blank">
-        <li class="icon linkedin">
-          <span class="tooltip">LinkedIn</span>
-          <span><i class="fab fa-linkedin"></i></span>
-        </li>
-      </a>
-      <a href="#" target="_blank">
-        <li class="icon github">
-          <span class="tooltip">GitHub</span>
-          <span><i class="fab fa-github"></i></span>
-        </li>
-      </a>
-      <a href="#" target="_blank">
-        <li class="icon facebook">
-          <span class="tooltip">Facebook</span>
-          <span><i class="fab fa-facebook-f"></i></span>
-        </li>
-      </a>
-      <a href="#" target="_blank">
-        <li class="icon instagram">
-          <span class="tooltip">Instagram</span>
-          <span><i class="fab fa-instagram"></i></span>
-        </li>
-      </a>
-      <a href="#" target="_blank">
-        <li class="icon twitter">
-          <span class="tooltip">Twitter</span>
-          <span><i class="fab fa-twitter"></i></span>
-        </li>
-      </a>
-      <a href="#" target="_blank">
-        <li class="icon github">
-          <span class="tooltip">CodePen</span>
-          <span><i class="fab fa-codepen"></i></span>
-        </li>
-      </a>
-    </ul>
-  </div>
-  <div class="final_text"></div>
-  <p>Copyright &copy; All rights reserved, 2023
-    <br/>Designed by Deepanker & Devendra 
-  </p>
-</footer>
+          <MDBBtn
+            rippleColor="dark"
+            color='link'
+            floating
+            size="lg"
+            className='text-dark m-1'
+            href='#!'
+            role='button'
+          >
+            <MDBIcon fab className='fa-twitter' />
+          </MDBBtn>
 
+          <MDBBtn
+            rippleColor="dark"
+            color='link'
+            floating
+            size="lg"
+            className='text-dark m-1'
+            href='#!'
+            role='button'
+          >
+            <MDBIcon fab className='fa-google' />
+          </MDBBtn>
 
+          <MDBBtn
+            rippleColor="dark"
+            color='link'
+            floating
+            size="lg"
+            className='text-dark m-1'
+            href='#!'
+            role='button'
+          >
+            <MDBIcon fab className='fa-instagram' />
+          </MDBBtn>
 
+          <MDBBtn
+            rippleColor="dark"
+            color='link'
+            floating
+            size="lg"
+            className='text-dark m-1'
+            href='#!'
+            role='button'
+          >
+            <MDBIcon fab className='fa-linkedin' />
+          </MDBBtn>
+
+          <MDBBtn
+            rippleColor="dark"
+            color='link'
+            floating
+            size="lg"
+            className='text-dark m-1'
+            href='#!'
+            role='button'
+          >
+            <MDBIcon fab className='fa-github' />
+          </MDBBtn>
+        </section>
+      </MDBContainer>
+
+      <div className='text-center text-dark p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+        © 2023 Copyright:
+        <a className='text-dark' href='https://mdbootstrap.com/'>
+          Devendra & Deepanker
+        </a>
+      </div>
+    </MDBFooter>
     </div>
-  )
+  );
 }
