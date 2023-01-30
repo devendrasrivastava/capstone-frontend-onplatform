@@ -7,7 +7,7 @@ export default function Contacts(props) {
     props.DeleteHandeller(id)
   }
   return (
-    <div className="col-md-4 ho">
+    <div className="col-12 col-md-6 col-lg-4 ho">
       <div className="card m-4" style={{ width: "18rem" }}>
         <div className="card-body">
           <h6 className="card-text">Name: {props.fname}</h6>

@@ -39,7 +39,7 @@ export default function ContactList() {
     <div className="row">
       
         {
-            contacts.map(item=><Contacts key={item.id} DeleteHandeller={DeleteContact} id={item.id} fname={item.firstname} accountnumber={item.accountnumber} email={item.email} ifsc={item.ifsc} mobile={item.phone}/>)
+            contacts.map(item=><Contacts key={item.id} DeleteHandeller={DeleteContact} id={item.id} fname={item.firstname} accountnumber={item.accountnumber} email={item.email} ifsc={item.ifsc} mobile={item.phone}/> )
         }
        
     </div>

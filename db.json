@@ -1,26 +1,6 @@
 {
   "contacts": [
     {
-      "firstname": "anant yadav",
-      "lastname": "",
-      "email": "anant@gmail.com",
-      "city": "",
-      "phone": "9898989890",
-      "accountnumber": "79789797",
-      "ifsc": "sdfsdfd999",
-      "id": 7
-    },
-    {
-      "firstname": "Ajay Jadeja",
-      "lastname": "",
-      "email": "ajay@gmail.com",
-      "city": "",
-      "phone": "9898989898",
-      "accountnumber": "90808088",
-      "ifsc": "dfd7889877",
-      "id": 8
-    },
-    {
       "firstname": "Nitin Mishra",
       "lastname": "",
       "email": "nitin@gmail.com",
@@ -49,6 +29,56 @@
       "accountnumber": "97977997",
       "ifsc": "hdfc000032",
       "id": 11
+    },
+    {
+      "firstname": "Lalit Saini",
+      "lastname": "",
+      "email": "lalit@gmail.com",
+      "city": "",
+      "phone": "7987979797",
+      "accountnumber": "98979873",
+      "ifsc": "IDFC001123",
+      "id": 12
+    },
+    {
+      "firstname": "Vijay Kapoor",
+      "lastname": "",
+      "email": "vijay@gmail.com",
+      "city": "",
+      "phone": "9879797977",
+      "accountnumber": "98797977",
+      "ifsc": "SBI0000234",
+      "id": 13
+    },
+    {
+      "firstname": "Salman Khan",
+      "lastname": "",
+      "email": "salman@gmail.com",
+      "city": "",
+      "phone": "8979797777",
+      "accountnumber": "89897777",
+      "ifsc": "PNB0012007",
+      "id": 14
+    },
+    {
+      "firstname": "Ajay Bhati",
+      "lastname": "",
+      "email": "ajaybhati@gmail.com",
+      "city": "",
+      "phone": "9789797977",
+      "accountnumber": "97979797",
+      "ifsc": "PNB8989800",
+      "id": 15
+    },
+    {
+      "firstname": "Veenu Raghavan",
+      "lastname": "",
+      "email": "veenu@gmail.com",
+      "city": "",
+      "phone": "8979879797",
+      "accountnumber": "97979777",
+      "ifsc": "ICICI00003",
+      "id": 16
     }
   ]
 }

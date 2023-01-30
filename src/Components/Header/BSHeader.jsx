@@ -65,9 +65,7 @@ export default function BSHeader() {
                     <li class="nav-item">
                       <Link class="nav-link active" to="/dashboard">Dashboard</Link>
                     </li>
-                    <li class="nav-item">
-                      <Link class="nav-link active" to="/contactlist">Contact List</Link>
-                    </li>
+                    
 
                     <li className="nav-item">
                       <Link className="nav-link active" to="/business" onClick={handleOpen}>business</Link><Backdrop

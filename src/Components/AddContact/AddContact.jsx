@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import { Button } from '@mui/material';
 
 
 const Alert = React.forwardRef(function Alert(props, ref) {         //added for snackbar
@@ -47,14 +48,14 @@ export default function AddContact() {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    setOpen(true);
-                    // navigate("/contactlist")
+                    // setOpen(true);
+                    navigate("/contactlist")
 
                 })
                 .catch((e) => {
                     console.log("Catch block executed")
-                    .finally(console.log("Finally executed"))
-                    
+                        .finally(console.log("Finally executed"))
+
                 });
         },
         validationSchema: yup.object().shape({
@@ -133,12 +134,15 @@ export default function AddContact() {
                                 {formik.errors.phone && formik.touched.phone ? <span className='text-danger'>{formik.errors.phone}</span> : null}
                             </div>
                             <div className="mt-2 my-4">
-                                <button type="submit" className='btn user-button'> Add Customer</button>
+                                <Button type="submit" className='btn user-button'> Add Customer</Button>
                                 <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'center' }} open={open} autoHideDuration={3000} onClose={handleClose}>
                                     <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
                                         Record Added Successfully
                                     </Alert>
                                 </Snackbar>
+                                <Button variant="contained" href="/contactlist" className='mx-4 user-button'>
+                                    My Contacts
+                                </Button>
 
                             </div>
 
